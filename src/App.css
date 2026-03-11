@@ -30,6 +30,10 @@
   --text-heading-size-two: 40px;
   --text-footer-heading-size: 42px;
 
+  --spacing-wider: 3.25rem;
+  --spacing-wide: 2.8125rem;
+  --spacing-small: 1.5625rem;
+
 }
 
 @layer base {
@@ -60,30 +64,53 @@
   button {
     @apply text-btn-size text-center font-body font-bold uppercase outline-none w-41 h-11 rounded-4xl cursor-pointer;
   }
+
+  /** shared styles */
+  .hero {
+    @apply px-5.5;
+  }
 }
 
 @layer components {
   .container {
-    @apply max-w-[20rem] flex flex-col items-center justify-center my-0 mx-auto;
+    @apply flex flex-col items-center justify-center w-full;
 
   }
-  .header-container {
-    @apply flex h-0 w-full;
 
-    & .header {
-      @apply flex items-center justify-between w-full h-30 py-6;
+  .hero {
+    @apply bg-secondary-bg w-full h-164.75;
 
-      & .logo {
-        @apply w-32 h-32 flex items-center justify-start;
-
-        & img {
-          @apply w-32 h-32 object-contain;
+    .header-container {
+      @apply flex  w-full;
+  
+      & .header {
+        @apply flex items-center justify-between w-full h-30 py-6;
+  
+        & .logo {
+          @apply w-26.5 h-26.5 flex items-center justify-start;
+  
+          & img {
+            @apply w-32 h-32 object-contain;
+          }
+        }
+  
+        .contact-us {
+          @apply bg-btn-primary-bg text-primary-bg;
         }
       }
+    }
 
-      .contact-us {
-        @apply bg-btn-primary-bg text-primary-bg;
+    & .hero-content {
+      @apply mt-16;
+
+      & .hero-title {
+        @apply text-center leading-wider;
+      }
+  
+      & .hero-body {
+        @apply text-center leading-small mt-5;
       }
     }
+
   }
 }
