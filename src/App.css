@@ -66,20 +66,22 @@
   }
 
   /** shared styles */
-  .hero {
+  .hero, .about, .cta {
     @apply px-5.5;
   }
 }
 
 @layer components {
   .container {
-    @apply flex flex-col items-center justify-center w-full;
+    @apply flex flex-col items-center justify-center w-full max-w-screen!;
 
   }
 
+  /** Hero Section */
   .hero {
     @apply bg-secondary-bg w-full h-164.75;
 
+    /** Header */
     .header-container {
       @apply flex  w-full;
   
@@ -100,6 +102,7 @@
       }
     }
 
+    /** Hero Content */
     & .hero-content {
       @apply mt-16;
 
@@ -111,6 +114,48 @@
         @apply text-center leading-small mt-5;
       }
     }
+  }
 
+  /** About Section */
+  .about {
+    @apply mt-small mb-15.5 w-full text-center flex flex-col gap-6 items-center;
+
+    /** Expertise Section */
+    & .expertise {
+      @apply flex flex-col gap-6 items-center;
+
+      & img {
+        @apply w-83.25 h-59 object-contain;
+      }
+
+      & .expertise-details {
+        & .expertise-title {
+          @apply mb-6 leading-wide;
+        }
+
+        & .expertise-body {
+          @apply leading-small;
+        }
+      }
+    }
+
+    /** Marketing Team Section */
+    & .marketing-team {
+      & .marketing-team-details {
+        @apply mb-7.5;
+
+        & .marketing-team-title {
+          @apply mb-6 leading-wide;
+        }
+
+        & .marketing-team-body {
+          @apply leading-small;
+        }
+      }
+
+      & img {
+        @apply block bg-transparent bg-center bg-origin-padding bg-no-repeat w-full drop-shadow-(--shadow-img-marketing) pt-7.5;
+      }
+    }
   }
 }
