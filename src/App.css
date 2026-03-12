@@ -7,7 +7,7 @@
   --color-body-text: #000000;
   --color-btn-primary-bg: #2979EC;
   --color-footer-bg: #0A459E;
-  --color-footer-cta-bg: #FFBE3C;
+  --color-footer-cta-btn: #FFBE3C;
 
   --shadow-img-marketing: 3px 6px 15px #00000036;
 
@@ -97,7 +97,7 @@
         }
   
         .contact-us {
-          @apply bg-btn-primary-bg text-primary-bg;
+          @apply bg-btn-primary-bg text-primary-bg hover:bg-primary-bg hover:text-btn-primary-bg hover:border hover:border-btn-primary-bg transition-colors duration-300;
         }
       }
     }
@@ -118,7 +118,7 @@
 
   /** About Section */
   .about {
-    @apply mt-small mb-15.5 w-full text-center flex flex-col gap-6 items-center;
+    @apply mt-small mb-15.5 w-full text-center flex flex-col gap-7.5 items-center;
 
     /** Expertise Section */
     & .expertise {
@@ -134,7 +134,7 @@
         }
 
         & .expertise-body {
-          @apply leading-small;
+          @apply leading-small pb-6;
         }
       }
     }
@@ -145,7 +145,7 @@
         @apply mb-7.5;
 
         & .marketing-team-title {
-          @apply mb-6 leading-wide;
+          @apply mb-7.5 leading-wide;
         }
 
         & .marketing-team-body {
@@ -155,6 +155,23 @@
 
       & img {
         @apply block bg-transparent bg-center bg-origin-padding bg-no-repeat w-full drop-shadow-(--shadow-img-marketing) pt-7.5;
+      }
+    }
+  }
+
+  /** CTA Section */
+  & .cta {
+    @apply bg-footer-bg w-full;
+
+    & .cta-content-container {
+      @apply text-center flex flex-col items-center justify-center gap-10.25 my-26;
+
+      & .cta-description {
+        @apply text-primary-bg leading-wide;
+      }
+
+      & .cta-btn {
+        @apply bg-footer-cta-btn text-footer-bg hover:bg-transparent hover:text-footer-cta-btn hover:border hover:border-footer-cta-btn transition-colors duration-300;
       }
     }
   }
