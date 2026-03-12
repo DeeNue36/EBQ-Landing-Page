@@ -154,7 +154,7 @@
       }
 
       & img {
-        @apply block bg-transparent bg-center bg-origin-padding bg-no-repeat w-full drop-shadow-(--shadow-img-marketing) pt-7.5;
+        @apply block bg-transparent bg-center bg-origin-padding bg-no-repeat w-full drop-shadow-(--shadow-img-marketing) py-7.5;
       }
     }
   }
