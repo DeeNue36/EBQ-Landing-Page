@@ -5,7 +5,9 @@ export const Hero = () => {
             <header className="header-container">
                 <nav className="header">
                     <div className="logo">
-                        <img src="/ebq-logo.png" alt="EBQ Logo" />
+                        <a href="/">
+                            <img src="/ebq-logo.png" alt="EBQ Logo"  />
+                        </a>
                     </div>
                     <button className="contact-us">
                         Contact Us
