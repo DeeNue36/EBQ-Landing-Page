@@ -1,4 +1,8 @@
+import { useMagneticButton } from "../utilities/useMagneticButton"
+
 export const Hero = () => {
+    const btnRef = useMagneticButton(0.2, 1.6); // Pass values to useMagneticButton hook which adjusts the strength and fling values for the button
+
     return (
         <section className="hero">
             {/* Header */}
@@ -9,7 +13,7 @@ export const Hero = () => {
                             <img src="/ebq-logo.png" alt="EBQ Logo"  />
                         </a>
                     </div>
-                    <button className="contact-us">
+                    <button ref={btnRef} className="contact-us">
                         Contact Us
                     </button>
                 </nav>
