@@ -9,8 +9,8 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY; // Get the number of pixels the document is currently scrolled vertically
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Calculate the total scrollable height of the document
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       setScrollProgress(progress);
     };
