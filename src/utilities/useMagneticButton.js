@@ -2,12 +2,10 @@ import { useRef, useEffect } from 'react';
 
 export const useMagneticButton = (strength = 0.64, fling = 2.4) => {
     const btnRef = useRef(null);
-    const wrapperRef = useRef(null);
 
     useEffect(() => {
         const btn = btnRef.current;
-        const wrapper = wrapperRef.current;
-        if (!btn || !wrapper) return;
+        if (!btn) return;
 
         const handleMouseMove = (e) => {
             const rect = btn.getBoundingClientRect();
@@ -38,17 +36,16 @@ export const useMagneticButton = (strength = 0.64, fling = 2.4) => {
             }, 70);
         };
 
-        wrapper.addEventListener("mousemove", handleMouseMove);
-        wrapper.addEventListener("mouseleave", handleMouseLeave);
+        btn.addEventListener("mousemove", handleMouseMove);
+        btn.addEventListener("mouseleave", handleMouseLeave);
 
         return () => {
-            wrapper.removeEventListener("mousemove", handleMouseMove);
-            wrapper.removeEventListener("mouseleave", handleMouseLeave);
+            btn.removeEventListener("mousemove", handleMouseMove);
+            btn.removeEventListener("mouseleave", handleMouseLeave);
         };
     }, [strength, fling]);
     
     const setBtnRef = (node) => { btnRef.current = node; };
-    const setWrapperRef = (node) => { wrapperRef.current = node; };
 
-    return { setBtnRef, setWrapperRef };
+    return { setBtnRef};
 }
