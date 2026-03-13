@@ -180,7 +180,7 @@
       }
 
       & .cta-btn {
-        @apply bg-footer-cta-btn text-footer-bg hover:bg-transparent hover:text-footer-cta-btn hover:border hover:border-footer-cta-btn transition-["transform"] duration-300 ease-["ease"] 3xl:text-xl 3xl:w-54;
+        @apply bg-footer-cta-btn text-footer-bg inline-block hover:bg-transparent hover:text-footer-cta-btn hover:border hover:border-footer-cta-btn transition-["transform"] duration-300 ease-["ease"] 3xl:text-xl 3xl:w-54;
       }
     }
   }
