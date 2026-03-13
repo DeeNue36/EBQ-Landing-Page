@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 
-export const useMagneticButton = (strength= 0.64, fling=2.4) => {
+export const useMagneticButton = (strength = 0.64, fling = 2.4) => {
     const btnRef = useRef(null);
 
     useEffect(() => {
