@@ -1,7 +1,7 @@
 import { useMagneticButton } from '../utilities/useMagneticButton';
 
-export const CTA = () => {
-    const btnRef = useMagneticButton();
+export const CTA = () => {   
+    const { setBtnRef } = useMagneticButton();
 
     return (
         <section className="cta">
@@ -9,7 +9,7 @@ export const CTA = () => {
                 <h3 className="cta-description">
                     Looking to take your <span>marketing to the next level?</span>
                 </h3>
-                <button  ref={btnRef} className="cta-btn">
+                <button  ref={setBtnRef} className="cta-btn">
                     Contact Us
                 </button>
             </div>
