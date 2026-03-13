@@ -99,9 +99,9 @@
             @apply w-32 h-32 object-contain 3xl:w-36 3xl:h-36;
           }
         }
-  
+
         .contact-us {
-          @apply bg-btn-primary-bg text-primary-bg hover:bg-primary-bg hover:text-btn-primary-bg hover:border hover:border-btn-primary-bg transition-colors duration-300 3xl:text-xl 3xl:w-54;
+          @apply bg-btn-primary-bg text-primary-bg relative before:absolute before:content-[""] before:-inset-10 hover:bg-primary-bg hover:text-btn-primary-bg hover:border hover:border-btn-primary-bg transition-colors duration-300 3xl:text-xl 3xl:w-54;
         }
       }
     }
@@ -183,7 +183,7 @@
       }
 
       & .cta-btn {
-        @apply bg-footer-cta-btn text-footer-bg inline-block hover:bg-transparent hover:text-footer-cta-btn hover:border hover:border-footer-cta-btn transition-["transform"] duration-300 ease-["ease"] 3xl:text-xl 3xl:w-54;
+        @apply bg-footer-cta-btn text-footer-bg inline-block relative before:absolute before:content-[""] before:-inset-10 hover:bg-transparent hover:text-footer-cta-btn hover:border hover:border-footer-cta-btn transition-["transform"] duration-300 ease-["ease"] 3xl:text-xl 3xl:w-54;
       }
     }
   }
