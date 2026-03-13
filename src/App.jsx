@@ -1,15 +1,41 @@
+import { useState, useEffect } from 'react'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { CTA } from './components/CTA'
 import './App.css'
 
 function App() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  },[]);
+
   return (
-    <main className='container'>
-      <Hero />
-      <About />
-      <CTA />
-    </main>
+    <>
+      {/* Progress Bar */}
+      <div 
+        className="progress-bar" 
+        style={{ width: `${scrollProgress}%` }}
+      >
+      </div>
+
+      {/* Main Content */}
+      <main className='container'>
+        <Hero />
+        <About />
+        <CTA />
+      </main>
+    </>
   )
 }
 
